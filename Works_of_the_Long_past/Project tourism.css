@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./Downloads/img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+    height: 65px;
+    width: 100%;
+    align-items: center;
+    padding: 30px;
+
+}
+.container .logo{
+    font-weight: bolder;
+    font-size: 23px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.logo:hover{
+    letter-spacing: 2px;
+}
+
+.container ul{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+
+}
+.container ul li::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: wheat;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: 0.8s;
+
+}
+
+.container ul li:hover::after{
+    width: 100%;
+    letter-spacing: 2px;
+    
+}
+.container a{
+    color: white;
+    text-decoration: none;
+
+}
+.container ul li{
+    list-style: none;
+    position: relative;
+   
+}
+
+
+header .containers{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    color: white;
+    justify-content: space-between;
+    
+}
+header .containers .content{
+    margin-left: 40px;
+}
+h1 {
+    font-size: 100px;
+    font-weight: bolder;
+}
+p{
+    line-height: 15px;
+    font-size: 11px;
+}
+button{
+    width: 175px;
+    height: 25px;
+    background-color: transparent;
+    border: white solid 2px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.5s;
+    
+
+}
+.content span{
+    width: 0;
+    height: 100% ;
+    background-color: rgb(12, 2, 37);
+    position: absolute;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.5s;
+
+
+}
+button:hover span{
+    width: 100%;
+
+}
+button:hover{
+    border: none;
+
+}
+.box{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding:15px 25px;
+    cursor: pointer;
+    margin: 10px 15px;
+    box-sizing: border-box;
+    border: none ;
+    transition: 0.5s;
+    box-shadow: 2px;
+    
+    
+
+
+}
+.big{
+    width: 500px;
+    margin-top: 10px;
+}
+.box1{
+    background: url('./Downloads/image.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.box2{
+    background: url('./Downloads/images.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.box3{
+    background: url('./Downloads/img2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.box4 {
+    background: url('./Downloads/image.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box:hover{
+    transform: translateY(-10px);
+
+}

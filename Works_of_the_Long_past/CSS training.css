@@ -1,0 +1,61 @@
+body{margin: 0
+}
+
+.container{width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: 65px 50px 1fr 1fr 50px 1fr 50px;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 10px;
+    gap: 10px;
+    box-sizing: border-box;
+}
+.container div{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 14px;
+   
+}
+.LOGO{
+    grid-column: 5;
+    
+}
+.brandname{
+    grid-column: 1 /span 4;
+    text-align: center;
+    background-color: black;
+    color: white;
+    letter-spacing: 40px;
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+.motto{
+    grid-column: 1 /span 5;
+}
+.content{
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+}
+.secondc{
+    grid-column: 3 / 6;
+    grid-row: 3 / 5;
+
+}
+.mission{
+    grid-column: 1 / 6;
+}
+.thirdc{
+    grid-column: 1 / 3 ;
+}
+.fourthc{
+    grid-column: 3 / 5;
+}
+.footer{
+    grid-column: 1 / 6;
+}

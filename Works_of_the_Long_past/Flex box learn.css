@@ -1,0 +1,32 @@
+.body{
+    margin: 0;
+}
+.container{
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+.container div{
+    padding: 10px;
+    border: 2px solid black;
+    margin: 10px;
+}
+.logo{
+    font-size: x-large;
+    
+   
+
+}
+.brandn{
+    font-family: 'Courier New', Courier, monospace;
+   
+}
+.motto{
+    
+    font-size: 15px;
+}

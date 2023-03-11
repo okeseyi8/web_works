@@ -1,0 +1,59 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.flexcontainer {
+    display: flex;
+    background-color: #f4f4f4;
+    /* the justify content works with the main axis */
+    justify-content: end;
+    /* works with the cross axis*/
+    align-items: center;
+    /*flex direction: column; this tells where the box models goes */
+
+    /*flex-wrap: wrap; this is used to move the items on the webpage down if it does not fit as the page is being minimized */
+
+    
+
+} 
+.item{
+    width:  100px;
+    height: 100px;
+    background-color: rgb(10, 10, 70);
+    color: white;
+    /* works woth just the class you specify on the cros axis*/
+    align-self: center ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*flex basis is going to be the same as width. it is like the start up width*/
+
+}
+.ITEM:nth-of-type(1){
+    order: 2;
+    /*flex grow: 1 this is used to make the items grow as the webpage extends 
+    this can be in two times or even three times its size as the webpage extends 
+    flex shrink is the rte at which they shrink  .it is not used often
+
+    a combo of flex-shrink-grow-basis is : (flex: 1{grow} 0{shrink} 100px{basis})
+    flex: 1 (shorthand for flex grow)
+    
+    */
+}
+.ITEM:nth-of-type(2){
+    order: 3;
+}
+.iem:nth-of-type(3){
+    order:1 ;
+}
+
+
+/*flex box project*/
+

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./Downloads/4340428.jpg');
+    background-repeat: no-repeat;
+   
+    background-position: center;
+    background-size: cover;
+    
+
+}
+.navbar .container{
+    display: flex;
+    height: 60px;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    
+
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+}
+.navbar ul{
+    list-style-type: none;
+}

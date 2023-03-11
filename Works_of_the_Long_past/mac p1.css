@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    
+}  
+.navbar{
+    background-color: black;   
+}
+.navbar .container{
+    height: 60px;
+    
+}
+.navbar .container{
+    display: flex;
+    height: 100%;
+   
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+}

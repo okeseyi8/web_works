@@ -1,0 +1,14 @@
+/* Order of the types of styling according to their recognition
+Inline styling 
+Internal styling 
+external styling 
+Browser default 
+ */
+ /* the id selector > class selector > header selector 
+ the id selector is used for just one thing and class are used multiple times  */
+#heading{font-family: 'Times New Roman', Times, serif; text-align: center;letter-spacing: 14pt; text-decoration: underline 0.75px; text-shadow: 7pt 5pt 7pt black}
+#heading2{font-family: 'Courier New', Courier, monospace;}
+p.First{font-style: oblique; font-weight:700;}
+p.Second{font-style: oblique; font-weight:3000;}
+p.RED{font-weight:900 ;font-family: cursive;}
+#note{font-family: "courier";}
