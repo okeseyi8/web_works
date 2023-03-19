@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Media player</title>
+</head>
+<body>
+    <div class="heading">
+        <img src="https://static.wixstatic.com/media/d54aed_b00698488ad947bfaf17d7433b5b9d3f~mv2.png/v1/fill/w_214,h_214,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Icon-androidTV.png" alt="" srcset="">
+        <p>merrni radion kudo me vete</p>
+    </div>
+    <div class="container">
+        
+        <div class="spacer">
+
+        </div>
+        <div class="circle">
+            <div class="play box" id="play">
+                <!-- <i class="fa fa-pause" id="play" onclick="changeIcon(this)" aria-hidden="true"></i></div> -->
+                <i class="fa fa-play" onclick="changeIcon()" aria-hidden="true" ></i>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="foot_contain">
+            <h3 id="songTitle"></h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolores error rerum, amet aut </p>
+        </div>
+        <div class="footer_image">
+            <img id="footer_img" src="https://static.wixstatic.com/media/d54aed_b00698488ad947bfaf17d7433b5b9d3f~mv2.png/v1/fill/w_214,h_214,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Icon-androidTV.png" alt="" srcset="">
+            <div class="icons">
+                
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                
+            </div>
+        </div>
+
+    </footer>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    img{
+        width:100px;
+        height:100px ;
+        /* left: ; */
+        
+    }
+    .heading{
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 10px;
+        /* margin-right: 10px; */
+        width: 100%;
+        height: 10%;
+        margin-top: 2.5rem;
+        padding: 0;
+        align-items: center;
+    }
+    .spacer{
+        width: 100%;
+        height: 15px;
+    }
+    body{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+        align-items: center;
+        font-family: Montserrat, 'sans serif', Courier, monospace;
+        color: white;
+        letter-spacing: 1px;
+        /* background-color: rgb(29, 27, 27); */
+        background-color: rgb(29, 27, 27);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        position: relative;
+    }
+    body::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* set the color and opacity of the overlay */
+  z-index: -1;
+}
+    .circle{
+        width: 180px;
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 10px;
+        margin:4.5rem 0 3.5rem 0;
+        border-radius: 50%;
+        border: 16px solid #fff;
+        
+    }
+    .play.box{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+        color: white;
+        width: 100px;
+        height: 100px;
+    }
+    .play.box i{
+        font-size: 100px;
+        margin-left: 10px;
+        background-color: transparent;
+        padding: 4px 10px;
+        
+
+    }
+    .play.box .fa.fa-pause{
+        margin-left: 0;
+        padding: 0;
+        
+    }
+    .footer_image{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #footer_img{
+        margin: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    h3{
+        /* color: #E52759;  */
+        color: #E3B024;  
+        text-align: center;
+        /* color: rebeccapurple; */
+    }
+    p{
+        text-align: center;
+        margin-top: 13px;
+        font-size: 12px;
+        padding: 0 15px 0 15px;
+    }
+    .foot_contain{
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        margin: 0 20% 0 ;
+
+    }
+    .icons{
+        display: flex;
+        width: 120px;
+        justify-content: space-between;
+    }
+    a i{
+        text-decoration: none;
+        font-size: 28px;
+        color: #fff;
+    }
+</style>
+<script>
+    const songTitle = document.getElementById("songTitle")
+    const body = document.querySelector("body") 
+    fetch("https://business.playfm.al/api/nowplaying/16")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.now_playing.song);
+      const title = data.now_playing.song.text;
+      const artUrl = data.now_playing.song.art;
+      console.log(title)
+      songTitle.textContent = title
+      body.style.backgroundImage = `url(${artUrl})`;
+    });
+    
+
+
+    const playBox = document.getElementById('play');
+    let changeIcon = function(icon){
+        icon.classList.toggle('fa-play');
+        icon.classList.toggle('fa-pause');
+    };
+
+var audio = new Audio("https://stream.radiojar.com/sx7zrht0pg0uv");
+
+playBox.addEventListener("click", function() {
+    if (audio.paused) {
+        audio.play();
+        changeIcon(playBox.querySelector("i"));
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        changeIcon(playBox.querySelector("i"));
+    }
+});
+
+    
+</script>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Media Player</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<style>
+		body {
+			font-family: sans-serif;
+			background-color: #282c34;
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 50px;
+			min-height: 100vh;
+		}
+
+		h1 {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+
+		audio {
+			margin-bottom: 30px;
+		}
+
+		.controls {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.controls button {
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			font-size: 28px;
+			margin: 0 10px;
+			color: #fff;
+		}
+
+		.controls button:focus {
+			outline: none;
+		}
+
+		.controls button:hover {
+			color: #FF8C00;
+		}
+	</style>
+</head>
+<body>
+	<h1>Media Player</h1>
+	<audio id="audio" src="your-audio-file.mp3"></audio>
+	<div class="controls">
+		<button id="playpause" onclick="togglePlayPause()"><i class="fas fa-play"></i></button>
+		<button onclick="skip(-10)"><i class="fas fa-backward"></i></button>
+		<button onclick="skip(10)"><i class="fas fa-forward"></i></button>
+		<input type="range" id="seek-slider" min="0" max="100" value="0" onchange="seek()">
+	</div>
+	<script>
+		let audio = document.getElementById('audio');
+		let playpause = document.getElementById('playpause');
+		let seekslider = document.getElementById('seek-slider');
+		let seeking = false;
+		let seekto;
+
+		function togglePlayPause() {
+			if (audio.paused || audio.ended) {
+				playpause.innerHTML = '<i class="fas fa-pause"></i>';
+				audio.play();
+			} else {
+				playpause.innerHTML = '<i class="fas fa-play"></i>';
+				audio.pause();
+			}
+		}
+
+		function skip(value) {
+			audio.currentTime += value;
+		}
+
+		function seek() {
+			if (seeking) {
+				seekto = audio.duration * (seekslider.value / 100);
+				audio.currentTime = seekto;
+			}
+		}
+
+		audio.addEventListener('timeupdate', function() {
+			let seekPosition = 0;
+
+			if (!isNaN(audio.duration)) {
+				seekPosition = audio.currentTime * (100 / audio.duration);
+				seekslider.value = seekPosition;
+			}
+		});
+
+		seekslider.addEventListener("mousedown", function(event) {
+			seeking = true;
+			seek();
+		});
+
+		seekslider.addEventListener("mousemove", function(event) {
+			seek();
+		});
+
+		seekslider.addEventListener("mouseup", function(event) {
+			seeking = false;
+		});
+	</script>
+</body>
+</html>

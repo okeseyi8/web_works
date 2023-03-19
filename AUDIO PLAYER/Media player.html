@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Media player</title>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <img src="https://static.wixstatic.com/media/d54aed_b00698488ad947bfaf17d7433b5b9d3f~mv2.png/v1/fill/w_214,h_214,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Icon-androidTV.png" alt="" srcset="">
+        </div>
+        <div class="spacer">
+
+        </div>
+        <div class="circle">
+            <div class="play box" id="play">
+                <!-- <i class="fa fa-pause" id="play" onclick="changeIcon(this)" aria-hidden="true"></i></div> -->
+                <i class="fa fa-play" onclick="changeIcon(this); pause()" aria-hidden="true" ></i>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    img{
+        width:150px;
+        height:150px ;
+        /* left: ; */
+        
+    }
+    .heading{
+        display: flex;
+        justify-content: center;
+    }
+    .spacer{
+        width: 100%;
+        height: 70px;
+    }
+    body{
+        display: flex;
+        font-family: Montserrat, "Courier";
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(29, 27, 27);
+    }
+    .circle{
+        width: 400px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 10px;
+        border-radius: 50%;
+        border: 25px solid #fff;
+        
+    }
+    .play.box{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+        color: white;
+        width: 200px;
+        height: 200px;
+    }
+    .play.box i{
+        font-size: 200px;
+        margin-left: 30px;
+        background-color: transparent;
+        padding: 4px 10px;
+        
+
+    }
+    .play.box .fa.fa-pause{
+        margin-left: 0;
+        padding: 0;
+        
+    }
+</style>
+<script>
+    const playBox = document.getElementById('play')
+    const playButton = document.querySelector(".fa.fa-play")
+    const pauseButton = document.querySelector(".fa.fa-pause")
+    let changeIcon = function(icon){
+    icon.classList.toggle('fa-play')
+    icon.classList.toggle('fa-pause')
+    }
+    // window.onload = function pause(){
+    //     var audio = new Audio ("https://stream.radiojar.com/sx7zrht0pg0uv");
+    //     audio.pause()
+    //     togglePlay()
+    // }
+    playButton.addEventListener("click", function playMusic(){
+        var audio = new Audio ("https://stream.radiojar.com/sx7zrht0pg0uv");
+        audio.play()
+    })
+    function pause(){
+        alert("pause")
+    }
+    // if(pauseButton.clicked == true){
+    //     var audio = new Audio ("https://stream.radiojar.com/sx7zrht0pg0uv");
+    //     audio.pause();
+    // }
+
+
+    // function togglePlay(){
+    //     return audio.paused() ? audio.play() : audio.pause();
+    // }
+</script>
+</html>
