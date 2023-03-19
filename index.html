@@ -62,7 +62,7 @@
                   </div>
                </div>
             </div>
-            <div class='player-audio bg-black p-2 flex justify-center g-2 items-center relative' data-src='https://play.streamafrica.net/lofiradio'>
+            <div class='player-audio bg-black p-2 flex justify-center g-2 items-center relative' data-src='https://business.playfm.al:8010/radio.mp3'>
                <div class='flex flex-wrap justify-center text-center g-.75 | gt:flex gt:rounded-pill gt:p-1'>
                   <a aria-label='facebook' class='social social-facebook' href='https://facebook.com/boxradioapp' rel='nofollow' target='_blank'>
                   <i class='fa-brands fa-facebook'></i>
@@ -92,8 +92,8 @@
       <script defer='' src='api.js'></script>
       <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/1997315711-widgets.js"></script>
       <script data-host="https://www.digitalytics.one" data-dnt="false" src="https://www.digitalytics.one/js/script.js" id="ZwSg9rf6GA" async defer></script>
-      <script src=""> 
-	      function $$(e) {
+      <script>
+        function $$(e) {
     return document.getElementById(e)
 }
 
@@ -172,7 +172,7 @@ if (audioPlayer && audioPlayer.dataset.src) {
         e.paused ? setPlayStatus() : setPauseStatus()
     }), !1)
 }
-const boxplay = "http://business.playfm.al/api/nowplaying/16";
+const boxplay = "https://business.playfm.al/api/nowplaying/16";
 
 function playerInit() {
     fetch(boxplay).then((e => e.json())).then((e => {
