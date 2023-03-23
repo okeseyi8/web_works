@@ -172,7 +172,7 @@ if (audioPlayer && audioPlayer.dataset.src) {
         e.paused ? setPlayStatus() : setPauseStatus()
     }), !1)
 }
-const boxplay = "https://business.playfm.al/api/nowplaying/16";
+const boxplay = "http://business.playfm.al/api/nowplaying/16";
 
 function playerInit() {
     fetch(boxplay).then((e => e.json())).then((e => {
